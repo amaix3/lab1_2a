@@ -8,44 +8,47 @@ namespace Lab_2
     {
         static void Main(string[] args)
         {
-            /* 
-             Console.WriteLine("Podaj liczbę: ");
-             string odpowiedz = Console.ReadLine();
 
-             int liczba;
-             bool czySieUdalo = int.TryParse(odpowiedz, out liczba);
+            //Console.WriteLine("Podaj liczbę: ");
+            //string odpowiedz = Console.ReadLine();
 
-             if (czySieUdalo)
-             {
-                 if (liczba % 2 == 0)
-                 {
-                     Console.WriteLine("Parzysta");
-                 }
-                 else
-                 {
-                     Console.WriteLine("Nieparzysta");
-                 }
-             }
-             else
-             {
-                 Console.WriteLine("Nie podano liczby");
-             }
+            //int liczba;
+            //bool czySieUdalo = int.TryParse(odpowiedz, out liczba);
+
+            //if (czySieUdalo)
+            //{
+            //    if (liczba % 2 == 0)
+            //    {
+            //        Console.WriteLine("Parzysta");
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine("Nieparzysta");
+            //    }
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Nie podano liczby");
+            //}
 
 
-             Console.Read(); */
+            //Console.Read();
 
-            /*
-                Console.WriteLine("Podaj liczbe:");
-                string odpowiedz = Console.ReadLine();
-                int liczba = Convert.ToInt32(odpowiedz);
 
-                // (WARUNEK) ? (WARTOSC JESLI TRUE) : (WARTOSC JESLI FALSE);
 
-                Console.WriteLine((liczba % 2 == 0) ? "Parzysta" : "Nieparzysta");
 
-                Console.Read();
 
-            */
+            //Console.WriteLine("Podaj liczbe:");
+            //string odpowiedz = Console.ReadLine();
+            //int liczba = Convert.ToInt32(odpowiedz);
+
+            ////(WARUNEK) ? (WARTOSC JESLI TRUE) : (WARTOSC JESLI FALSE);
+
+            //Console.WriteLine((liczba % 2 == 0) ? "Parzysta" : "Nieparzysta");
+
+            //Console.Read();
+
+
 
             /*
             double odleglosc = double.MinValue;
@@ -69,14 +72,14 @@ namespace Lab_2
             int[] liczniki = { 1, 1, 1 };
             string linia = string.Empty;
 
-            while(linia != "exit")
+            while (linia != "exit")
             {
 
-                // Console.WriteLine(licznik++);
+                Console.WriteLine(licznik++);
                 linia = Console.ReadLine();
 
-                
-                switch(linia)
+
+                switch (linia)
                 {
                     case "A":
                         Console.WriteLine("A" + liczniki[0]++);
@@ -105,7 +108,7 @@ namespace Lab_2
                     break;
                 }
             }
-            
+
         }
     }
 }
