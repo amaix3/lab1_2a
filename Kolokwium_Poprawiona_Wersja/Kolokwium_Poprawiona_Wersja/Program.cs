@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 
 namespace Kolokwium_Poprawiona_Wersja
 {
@@ -41,9 +42,9 @@ namespace Kolokwium_Poprawiona_Wersja
 
             Console.WriteLine("Wyświetlenie całej tablicy: ");
 
-            for (int i = 1; i < tablica.Length; i++)
+            for (int i = 0; i < tablica.Length; i++)
             {
-                tablica[i] = i;
+                tablica[i] = i + 1;
                 Console.WriteLine(tablica[i]);
             }
 
@@ -110,36 +111,21 @@ namespace Kolokwium_Poprawiona_Wersja
         }
 
 
-        static int Najmniejsza(int[,] tablica)
+        static void Najmniejsza(int[,] tablica)
         {
-            int min = int.MaxValue;
+            int min = tablica[0, 0];
 
-            foreach (var item in tablica)
+            for (int i = 0; i < tablica.GetLength(0); i++)
             {
-                if (item < min)
+                for (int j = 0; j < tablica.GetLength(1); j++)
                 {
-                    min = item;
-                }
-            }
-            return min;
-        }
-
-        static int Najmniejsza(int[][] tablica)
-        {
-            int min = int.MinValue;
-
-            for (int i = 0; i < tablica.Length; i++)
-            {
-                for (int j = 0; j < tablica[i].Length; j++)
-                {
-                    if (tablica[i][j] < min)
+                    if (tablica[i, j] < min)
                     {
-                        min = tablica[i][j];
+                        min = tablica[i, j];
                     }
                 }
             }
-
-            return min;
+            Console.WriteLine($"Najmniejszy element tablicy: {min}");
         }
 
         static void Zadanie4()
@@ -152,20 +138,20 @@ namespace Kolokwium_Poprawiona_Wersja
             {
                 for (int j = 0; j < prostokatna.GetLength(1); j++)
                 {
-                    prostokatna[i, j] = 1;
+                    int rnd = new Random().Next(-20, 20);
+                    prostokatna[i, j] = rnd;
                 }
             }
-
-            int[] poszarpana = new int[8];
+            Najmniejsza(prostokatna);
         }
 
         static void Zadanie5()
         {
             Console.WriteLine("ZADANIE 5:");
 
-            Ebook book = new Ebook("Henryk Sienkiewicz", "Potop", new DateTime(1886, 01, 01), new DateTime(2019, 04, 01), 49.99, 30);
+            Ebook book = new Ebook("Henryk Sienkiewicz", "Potop", new DateTime(1886, 01, 01), new DateTime(2019, 04, 01), 49.99, 50);
 
-            Console.WriteLine($"Autor: {book.Autor} | Tytuł: {book.Tytul} | Data Wydania: {book.DataWydania} | Data ostatniego zakupu: {book.DataOstatniegoZakupu} | Cena standardowa: {book.CenaStandardowa} zł | Obniżka: {book.Obnizka} % | Aktualna cena: {book.AktualnaCena} zł");
+            Console.WriteLine($"Autor: {book.Autor} | Tytuł: {book.Tytul} | Data Wydania: {book.DataWydania} | Data ostatniego zakupu: {book.DataOstatniegoZakupu} | Cena standardowa: {book.CenaStandardowa} zł | Obniżka: {book.Obnizka.ToString("P", CultureInfo.InvariantCulture)}  | Aktualna cena: {book.AktualnaCena} zł");
         }
 
         static void Main(string[] args)
@@ -173,7 +159,7 @@ namespace Kolokwium_Poprawiona_Wersja
             Zadanie1();
 
             Console.WriteLine();
-
+            
             Zadanie2();
 
             Console.WriteLine();

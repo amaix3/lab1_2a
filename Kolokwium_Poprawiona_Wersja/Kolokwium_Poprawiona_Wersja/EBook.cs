@@ -19,7 +19,7 @@ namespace Kolokwium_Poprawiona_Wersja
         public string Autor { get; private set; }
         public string Tytul { get; private set; }
         public DateTime DataWydania { get; private set; }
-        public DateTime DataOstatniegoZakupu { get; set; }
+        public DateTime DataOstatniegoZakupu { get; private set; }
 
 
         double _CenaStandardowa;
@@ -53,7 +53,7 @@ namespace Kolokwium_Poprawiona_Wersja
             }
             set
             {
-                if (_CenaStandardowa - value > 0)
+                if (value > 0)
                 {
                     _Obnizka = value;
                 }
@@ -72,11 +72,6 @@ namespace Kolokwium_Poprawiona_Wersja
             {
                 return _AktualnaCena = CenaStandardowa * ((100 - Obnizka) / 100);
             }
-            set
-            {
-                _AktualnaCena = CenaStandardowa * ((100 - Obnizka) / 100);
-            }
-
         }
     }
 }
