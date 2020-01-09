@@ -110,6 +110,22 @@ namespace Kolokwium_Poprawiona_Wersja
             }
         }
 
+        static int Najmniejsza(int[][] tablica)
+        {
+            int min = tablica[0][0];
+
+            for (int i = 0; i < tablica.GetLength(0); i++)
+            {
+                for (int j = 0; j < tablica[i].GetLength(1); j++)
+                {
+                    if (tablica[i][j] < min)
+                    {
+                        min = tablica[i][j];
+                    }
+                }
+            }
+            return min;
+        }
 
         static void Najmniejsza(int[,] tablica)
         {
@@ -151,7 +167,7 @@ namespace Kolokwium_Poprawiona_Wersja
 
             Ebook book = new Ebook("Henryk Sienkiewicz", "Potop", new DateTime(1886, 01, 01), new DateTime(2019, 04, 01), 49.99, 50);
 
-            Console.WriteLine($"Autor: {book.Autor} | Tytuł: {book.Tytul} | Data Wydania: {book.DataWydania} | Data ostatniego zakupu: {book.DataOstatniegoZakupu} | Cena standardowa: {book.CenaStandardowa} zł | Obniżka: {book.Obnizka.ToString("P", CultureInfo.InvariantCulture)}  | Aktualna cena: {book.AktualnaCena} zł");
+            Console.WriteLine($"Autor: {book.Autor} | Tytuł: {book.Tytul} | Data Wydania: {book.DataWydania} | Data ostatniego zakupu: {book.DataOstatniegoZakupu} | Cena standardowa: {book.CenaStandardowa} zł | Obniżka: {book.Obnizka} % | Aktualna cena: {book.AktualnaCena} zł");
         }
 
         static void Main(string[] args)
