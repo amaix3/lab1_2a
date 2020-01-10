@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Lab_9
+namespace Lab_8
 {
     public class PaperJammedEventArgs : PrinterEventArgs
     {
