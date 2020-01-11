@@ -165,7 +165,7 @@ namespace Kolokwium_Poprawiona_Wersja
         {
             Console.WriteLine("ZADANIE 5:");
 
-            Ebook book = new Ebook("Henryk Sienkiewicz", "Potop", new DateTime(1886, 01, 01), new DateTime(2019, 04, 01), 49.99, 50);
+            Ebook book = new Ebook("Henryk Sienkiewicz", "Potop", new DateTime(1886, 01, 01), new DateTime(2019, 04, 01), 49.99, 60);
 
             Console.WriteLine($"Autor: {book.Autor} | Tytuł: {book.Tytul} | Data Wydania: {book.DataWydania} | Data ostatniego zakupu: {book.DataOstatniegoZakupu} | Cena standardowa: {book.CenaStandardowa} zł | Obniżka: {book.Obnizka} % | Aktualna cena: {book.AktualnaCena} zł");
         }

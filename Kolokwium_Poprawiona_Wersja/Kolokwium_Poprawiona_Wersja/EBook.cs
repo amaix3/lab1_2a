@@ -68,13 +68,13 @@ namespace Kolokwium_Poprawiona_Wersja
             }
             set
             {
-                if (value > 0)
+                if (value > 0 && value <= 100)
                 {
                     _Obnizka = value;
                 }
                 else
                 {
-                    Console.WriteLine("Obniżka nie może być niższa ceny 0 zł.");
+                    Console.WriteLine("Niepoprawna obniżka.");
                 }
             }
         }
