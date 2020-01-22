@@ -33,9 +33,9 @@ namespace Lab_8
             _canPrint = false;
         }
 
-        static void OutOfInkEventHandler(object sender, OutOfInkEventArgs c)
+        static void OutOfInkEventHandler(object sender, OutOfInkEventArgs e)
         {
-            Console.WriteLine($"Please replace {c.InkColor}");
+            Console.WriteLine($"Please replace {e.InkColor}");
             _canPrint = false;
         }
     }

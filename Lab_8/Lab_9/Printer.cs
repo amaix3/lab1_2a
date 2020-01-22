@@ -50,9 +50,9 @@ namespace Lab_8
             }
         }
 
-        public void ink()
+        private void InternalEventHandler(object sender, PaperJammedEventArgs args)
         {
-
+            Console.WriteLine($"[Printer log] Jammed at page {args.Page} at {DateTime.Now.ToLongDateString()}");
         }
 
         private void OutOfInkInternalEventHandler(object sender, OutOfInkEventArgs args)
@@ -71,11 +71,13 @@ namespace Lab_8
                 new Ink ("Yellow")
             };
 
-            PaperJammed += PaperJammed;
             _blackInkLevel = 1;
             _cyanInkLevel = 1;
             _magentaInkLevel = 1;
             _yellowInkLevel = 1;
+
+            PaperJammed += InternalEventHandler;
+            OutOfInk += OutOfInkInternalEventHandler;
         }
 
         private class Ink
