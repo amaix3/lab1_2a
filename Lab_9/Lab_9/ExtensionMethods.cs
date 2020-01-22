@@ -51,16 +51,32 @@ namespace Lab_9
 
         //}
 
-        public static int ZliczZnaki2(this string text, char character, bool caseInvariant = true)
+
+        public static int ZliczZnaki2(this string text, char character)
         {
+            return text.Where(X => X.Equals(character)).Count();
+        }
+
+        public static int ZliczZnaki2(this string text)
+        {
+            return text.Length;
+        }
+
+        public static int ZliczZnaki2(this string text, char character1, bool caseInvariant = true)
+        {
+            if (text.Length == 0 )
+            {
+                caseInvariant = false;
+            }
+
             if (caseInvariant)
             {
-                text = text.ToLower();
-                character = char.ToLower(character);
+                text = text.ToUpper();
+                character1 = char.ToUpper(character1);
 
             }
 
-            return text.ZliczZnaki2(character);
+            return text.ZliczZnaki2(character1);
         }
 
 
