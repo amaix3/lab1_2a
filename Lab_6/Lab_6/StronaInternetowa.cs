@@ -6,15 +6,14 @@ namespace Lab_6
 {
     public class StronaInternetowa
     {
-        public string Serwer;
 
         public int SzybkoscProcesora { get; private set; }
 
-        public int Lacze { get; set; }
+        public int Lacze { get; private set; }
 
-        public int RAM { get; set; }
+        public int RAM { get; private set; }
 
-        public string Technologia { get; set; }
+        public string Technologia { get; private set; }
 
         public StronaInternetowa(int szybkoscProcesora, int lacze, int rAM, string technologia)
         {
@@ -25,22 +24,19 @@ namespace Lab_6
         }
 
 
-        public string Domena;
+    }
 
-
-        public string Nazwa { get; private set; }
-
-        public string Wlasciciel { get; private set; }
-
-
-        public StronaInternetowa(string nazwa, string wlasciciel)
+    public class Domena
+    {
+        public Domena(string nazwa, DateTime waznosc, string wlasciciel)
         {
             Nazwa = nazwa;
+            Waznosc = waznosc;
             Wlasciciel = wlasciciel;
-            
         }
 
-        
-
+        public string Nazwa { get; set; }
+        public DateTime Waznosc { get; set; }
+        public string Wlasciciel { get; set; }
     }
 }
