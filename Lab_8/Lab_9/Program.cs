@@ -16,13 +16,11 @@ namespace Lab_8
             {
                 printer.Print(i);
 
-
                 if (!_canPrint)
                 {
                     break;
                 }
             }
-           
 
             Console.Read();
         }
